@@ -22,7 +22,7 @@ set $menu j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/max/Pictures/Wallpaper/miami-hotline1920x1080.jpg fill
 #
 # Example configuration:
 #
@@ -41,6 +41,9 @@ exec swayidle -w \
          before-sleep 'swaylock-blur'
 
 bindsym $mod+Backspace exec swaylock-blur
+
+# hide mous after 8000ms inactivity
+seat * hide_cursor 8000
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
