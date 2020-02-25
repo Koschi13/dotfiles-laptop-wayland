@@ -37,6 +37,7 @@ set shiftwidth=4        " Indentation amount for < and > commands.
 set nostartofline       " Do not jump to first character with page commands.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 set termguicolors
+set foldmethod=indent   " Fold on indent. <za> toggle, <zo> open, <zc> close, <zR> open all,  <zM> close all
 
 " More natural splits
 set splitbelow          " Horizontal split below current.
