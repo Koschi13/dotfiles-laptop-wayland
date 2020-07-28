@@ -137,3 +137,4 @@ vg() {
 source ~/.config/zsh/custom-aliase.zsh
 source ~/.config/zsh/ssh.zsh
 source ~/.config/zsh/path.zsh
+source ~/.profile
