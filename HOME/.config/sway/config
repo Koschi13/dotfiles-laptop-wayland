@@ -237,3 +237,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 for_window [app_id="^.*"] border pixel 0
 for_window [class="^.*"] border pixel 0
+
+# Screenshot
+bindsym $mod+p exec grim -g "${slurp -d)" - | wl-copy

@@ -1,3 +1,4 @@
+export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 export ZSH="$HOME/.zplug/repos/robbyrussell/oh-my-zsh"
 bindkey -v  # Use Vim inside of the Terminal
