@@ -240,3 +240,7 @@ for_window [class="^.*"] border pixel 0
 
 # Screenshot
 bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_options caps:ctrl_modifier
+}
