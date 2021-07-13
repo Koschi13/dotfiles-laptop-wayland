@@ -10,5 +10,9 @@ fi
 
 # eval output
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<$HOME/.ssh/.ssh-agent-thing)"
+    eval "$(<$HOME/.ssh/.ssh-agent-thing)" > /dev/null
+fi
+
+if [ -f $HOME/.ssh/bsh ]; then
+    ssh-add $HOME/.ssh/bsh > /dev/null 2>&1
 fi

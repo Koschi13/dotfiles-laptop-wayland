@@ -7,5 +7,5 @@ LESS="--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen --RAW-
 MOZ_ENABLE_WAYLAND=1  # Enable wayland for firefox
 QT_QPA_PLATFORM="wayland-egl"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
+. "$HOME/.cargo/env"

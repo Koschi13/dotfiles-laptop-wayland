@@ -8,6 +8,12 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # oh-my-zsh
 zplug "robbyrussell/oh-my-zsh"
 
+# kubectl
+zplug "plugins/kubectl", from:oh-my-zsh
+
+# aws
+zplug "plugins/aws", from:oh-my-zsh
+
 # zsh-users
 zplug "zsh-users/zsh-completions", defer:0
 zplug "zsh-users/zsh-autosuggestions"
@@ -76,9 +82,6 @@ zplug "plugins/z", from:oh-my-zsh
 # A little bit complicated, enable when you want to use it: https://github.com/b4b4r07/enhancd
 zplug "b4b4r07/enhancd", use:enhancd.sh
 
-# Enhanced dir list with git features
-zplug "supercrabtree/k"
-
 # Auto-close and delete matching delimiters
 zplug "hlissner/zsh-autopair", defer:2
 
@@ -113,7 +116,7 @@ zplug 'wfxr/forgit', if:"which fzf"
 # Themes
 # =============================================================================
 zplug "~/.config/zsh/themes", from:local, as:theme, use:$ZSH_THEME.zsh-theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme
 # Base16 Shell
 BASE16_SHELL_SET_BACKGROUND=false
 BASE16_SHELL="$HOME/.config/base16-shell/"
