@@ -49,10 +49,14 @@ zstyle ":completion:*" matcher-list \
 
 # source config for powerlevel9k
 source ~/.config/zsh/themes/p9kgt
-# ZSH_THEME="xxf"
-plugins=(
-    git
-)
+
+# https://github.com/toggle-corp/alacritty-colorscheme/
+LIGHT_COLOR='base16-gruvbox-light-medium-256.yml'
+DARK_COLOR='base16-gruvbox-dark-hard-256.yml'
+
+alias day="alacritty-colorscheme -V apply $LIGHT_COLOR"
+alias night="alacritty-colorscheme -V apply $DARK_COLOR"
+alias toggle="alacritty-colorscheme -V toggle $LIGHT_COLOR $DARK_COLOR"
 
 source ~/.config/zsh/zplug.zsh
 # Install plugins if there are plugins that have not been installed

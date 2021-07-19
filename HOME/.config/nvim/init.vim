@@ -59,6 +59,13 @@ function! NumberToggle()
   endif
 endfunc
 
+augroup React
+" Files with extension .tsx are processed as React code
+    autocmd!
+    autocmd BufReadPre,FileReadPre *.tsx set ft=react
+augroup END
+
+
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
 
@@ -69,3 +76,9 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 luafile $HOME/.config/nvim/lua/init.lua
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" https://github.com/Biskit1943/alacritty-colorscheme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256          " Remove this line if not necessary
+  source ~/.vimrc_background
+endif

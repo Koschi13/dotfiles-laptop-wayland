@@ -258,3 +258,16 @@ gaps inner 5
 gaps outer 5
 
 input <identifier> xkb_numlock enabled
+
+# https://github.com/Biskit1943/alacritty-colorscheme
+set $light_color base16-gruvbox-light-medium-256.yml
+set $dark_color base16-gruvbox-dark-hard-256.yml
+
+# Toggle between light and dark colorschemes
+bindsym $mod+Shift+n exec alacritty-colorscheme -V toggle $light_color $dark_color
+
+# Toggle between all available colorschemes
+bindsym $mod+Shift+m exec alacritty-colorscheme -V toggle
+
+# Get notification with current colorscheme
+bindsym $mod+Shift+b exec notify-send "Alacritty Colorscheme" `alacritty-colorscheme status`
