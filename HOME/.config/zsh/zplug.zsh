@@ -112,6 +112,9 @@ forgit_clean=fgclean
 forgit_stash_show=fgss
 zplug 'wfxr/forgit', if:"which fzf"
 
+# timewarrior support
+zplug "svenXY/timewarrior"
+
 # =============================================================================
 # Themes
 # =============================================================================

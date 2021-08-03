@@ -33,7 +33,7 @@ Plug 'nvim-telescope/telescope-project.nvim'
 
 " nvim tree
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua', { 'commit': 'fd7f60e242205ea9efc9649101c81a07d5f458bb' }
+Plug 'kyazdani42/nvim-tree.lua'
 
 " surround struff
 Plug 'tpope/vim-surround'

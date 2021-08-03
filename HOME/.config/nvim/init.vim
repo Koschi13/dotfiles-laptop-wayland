@@ -46,9 +46,6 @@ set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 " Use <C-L> to clear the highlighting of :set hlsearch.
 "nnoremap <silent> <Leader>l :nohlsearch<cr>
 
-" Search and Replace
-nmap <Leader>s :%s//g<Left><Left>
-
 " Relative numbering
 function! NumberToggle()
   if(&relativenumber == 1)

@@ -170,9 +170,13 @@
         "interval" : 7
     },
     "custom/vpn": {
-        "format": "{} ",
+        "format": "{} {icon}",
+        "tooltip-format": "{}",
         "interval": 30,
-        "exec": "$HOME/.config/waybar/vpn-openvpn-status.sh"
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "$HOME/.config/waybar/vpn-openvpn-status.sh",
+        "format-icons": ["",""]
     },
     "custom/spotify": {
         "format": " {}",

@@ -39,10 +39,6 @@ vim.api.nvim_set_keymap("n", "<A-9>", ":BufferGoto 9<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-p>", "<CMD>Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-p>", "<CMD>Telescope live_grep<CR>", { noremap = true })
 
--- Find word/file across project
-vim.api.nvim_set_keymap("n", "<Space>pf", "<CMD>Telescope find_files<CR><ESC>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Space>pw", "<CMD>Telescope grep_string<CR><ESC>", { noremap = true })
-
 -- Git
 vim.api.nvim_set_keymap("n", "<Space>gla", "<CMD>lua require('plugins.telescope').my_git_commits()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Space>glc", "<CMD>lua require('plugins.telescope').my_git_bcommits()<CR>", { noremap = true, silent = true })

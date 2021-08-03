@@ -105,7 +105,8 @@ local mappings = {
   b = {
     name = "Buffer",
     b = { '<cmd>BufferMovePrevious<CR>',                           'Move back' },
-    c = { '<cmd>BufferCloseAllButCurrent<CR>',                     'Close but current' },
+    c = { '<cmd>BufferCloseAllButCurrent<CR>',                     'Close *but******** current' },
+    C = { '<cmd>BufferClose<CR>',                                  'Close current' },
     d = { '<cmd>BufferOrderByDirectory<CR>',                       'Order by directory' },
     f = { '<cmd>bfirst<CR>',                                       'First buffer' },
     h = { '<cmd>Startify<CR>',                                     'Home Buffer' },
@@ -165,6 +166,7 @@ local mappings = {
     h = { '<cmd>Telescope oldfiles<CR>',                           'file history' },
     H = { '<cmd>Telescope command_history<CR>',                    'command history' },
     s = { '<cmd>Telescope search_history<CR>',                     'search history' },
+    r = { '<cmd>%s//g<LEFT><LEFT>',                                'search and replace' },
   },
 
   t = {
