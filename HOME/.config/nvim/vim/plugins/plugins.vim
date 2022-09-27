@@ -30,6 +30,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-telescope/telescope-smart-history.nvim'
+Plug 'tami5/sqlite.lua'
 
 " nvim tree
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -56,5 +58,11 @@ Plug 'airblade/vim-rooter'
 
 " Floating terminal
 Plug 'voldikss/vim-floaterm'
+
+" NIX support
+Plug 'LnL7/vim-nix'
+
+" Nim support
+Plug 'alaviss/nim.nvim'
 
 call plug#end()

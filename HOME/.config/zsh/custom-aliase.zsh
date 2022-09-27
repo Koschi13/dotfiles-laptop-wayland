@@ -61,8 +61,21 @@ if [ -f /opt/portainer/portainer ]; then
     alias portainer='/opt/portainer/portainer --data /opt/portainer/portainer-data -p :10001 --template-file /opt/portainer/templates.json'
 fi
 
-if which docker &>/dev/null; then
+if which docker-compose &>/dev/null; then
     alias dc="docker-compose"
+fi
+
+if which docker &>/dev/null; then
+    alias dk="docker"
+    alias dkc="docker container"
+    alias dkcl="docker container list"
+    alias dkcrm="docker container rm"
+    alias dkcs="docker container stop"
+    alias dkcsa='docker container stop $(docker container ls -aq)'
+    alias dkcrma='docker container rm $(docker container ls -aq)'
+    alias dkps="docker ps"
+    alias dki="docker image"
+    alias dkil="docker image list"
 fi
 
 alias pip="python3 -m pip"

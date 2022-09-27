@@ -1,7 +1,6 @@
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 export ZSH="$HOME/.zplug/repos/robbyrussell/oh-my-zsh"
-bindkey -v  # Use Vim inside of the Terminal
 
 # Watching other users
 #WATCHFMT="%n %a %l from %m at %t."
@@ -140,12 +139,50 @@ vg() {
 }
 
 source ~/.config/zsh/custom-aliase.zsh
+source ~/.config/zsh/scandio_custom-aliase.zsh
+source ~/.config/zsh/scandio.zsh
 source ~/.config/zsh/ssh.zsh
 source ~/.config/zsh/path.zsh
 source ~/.profile
 
-# AWS BSH
-export AWS_PROFILE=bsh-aws-hcml-admin
+fpath+=$ZSH_CUSTOM/completions/
 
 # kubectl autocompletion
 source <(kubectl completion zsh)
+
+# The plugin will auto execute this zvm_after_init function
+zvm_after_init() {
+  source ${ZPLUG_HOME}/repos/junegunn/fzf/shell/completion.zsh
+  source ${ZPLUG_HOME}/repos/junegunn/fzf/shell/key-bindings.zsh
+  source ${ZPLUG_HOME}/repos/aloxaf/fzf-tab/fzf-tab.zsh
+  eval "$(navi widget zsh)"
+}
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(
+  forward-char
+  end-of-line
+  vi-forward-char
+  vi-end-of-line
+  vi-add-eol
+)
+bindkey '^ ' autosuggest-accept
+ZVM_VI_EDITOR="nvim"
+
+# default location would be ~/.config/starship.toml
+export STARSHIP_CONFIG=~/.config/starship/config.toml
+# also log to other dir
+export STARSHIP_CACHE=~/.cache/starship
+#eval "$(starship init zsh)"
+
+alias luamake=/home/max/.config/nvim/lua-language-server/3rd/luamake/luamake
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# haskell
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+source /usr/share/nvm/init-nvm.sh
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent

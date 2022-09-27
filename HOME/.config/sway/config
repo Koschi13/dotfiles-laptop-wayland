@@ -32,17 +32,17 @@ output DP-3 mode 2560x1440@60Hz position 4480,0
 
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/max/Pictures/Wallpaper/leaves_dark.jpg fill
+output * bg /home/max/Pictures/Wallpaper/STScI-01G7ETPF7DVBJAC42JR5N6EQRH.png fill
 
 ### Idle configuration
 #
 # Example configuration:
 #
-exec swayidle -w \
-        timeout 300 'swaylock-blur' \
-        timeout 600 'swaymsg "output * dpms off"' \
-             resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock-blur'
+#exec swayidle -w \
+#        timeout 300 'swaylock-blur' \
+#        timeout 600 'swaymsg "output * dpms off"' \
+#             resume 'swaymsg "output * dpms on"' \
+#        before-sleep 'swaylock-blur'
 
 bindsym $mod+Backspace exec swaylock-blur
 
@@ -256,8 +256,11 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 
 gaps inner 5
 gaps outer 5
+smart_gaps on
 
-input <identifier> xkb_numlock enabled
+input "1204:1296:HID_Keyboard_HID_Keyboard" {
+    xkb_numlock enable
+}
 
 # https://github.com/Biskit1943/alacritty-colorscheme
 set $light_color base16-gruvbox-light-medium-256.yml
@@ -280,3 +283,24 @@ for_window [class="Firefox"] inhibit_idle fullscreen
 
 # wayland vesion
 for_window [app_id="firefox"] inhibit_idle fullscreen
+
+# xwayland version
+for_window [class="Brave-browser"] inhibit_idle fullscreen
+
+# wayland vesion
+for_window [app_id="brave-browser"] inhibit_idle fullscreen
+
+#
+# Autostart
+#
+# The startup of the laptop together with two external monitors takes some time, therefore
+# we need to sleep 30sec, so all applications land on the correct monitor
+exec slack && sway '[class="Slack"]' move container to workspace 1
+exec spotify && sway '[class="Signal"]' move container to workspace 1
+exec signal-desktop && sway '[class="Spotify"]' move container to workspace 1
+exec alacritty && sway '[app_id="Alacritty"]' move container to workspace 2
+exec firefox && sway '[app_id="firefox"]' move container to workspace 3
+#exec com.gitlab.newsflash && sway '[app_id="NewsFlashGTK"]' move container to workspace 3
+
+exec_always nm-applet --no-agent
+exec easyeffects

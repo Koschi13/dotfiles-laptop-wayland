@@ -10,4 +10,12 @@ M.copy_path_to_clipboard = function()
   api.nvim_out_write(M.path..' filepath added to clipboard.\n')
 end
 
+M.remove_whitespaces = function(string)
+  return string:gsub("%s+", "")
+end
+
+M.add_whitespaces = function(number)
+  return string.rep(" ", number)
+end
+
 return M

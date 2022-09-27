@@ -8,6 +8,9 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # oh-my-zsh
 zplug "robbyrussell/oh-my-zsh"
 
+# vim mode
+zplug "jeffreytse/zsh-vi-mode"
+
 # kubectl
 zplug "plugins/kubectl", from:oh-my-zsh
 
@@ -110,10 +113,22 @@ forgit_ignore=fgi
 forgit_restore=fgcf
 forgit_clean=fgclean
 forgit_stash_show=fgss
+forgit_checkout_file=fgcf
+forgit_checkout_branch=fgcb
+forgit_checkout_commit=fgco
+forgit_cherry_pick=fgcp
+forgit_rebase=fgrb
+forgit_fixup=fgfu
 zplug 'wfxr/forgit', if:"which fzf"
 
 # timewarrior support
 zplug "svenXY/timewarrior"
+
+# z directory jumper
+zplug "agkozak/zsh-z"
+
+# fzf tab completion
+zplug "aloxaf/fzf-tab"
 
 # =============================================================================
 # Themes

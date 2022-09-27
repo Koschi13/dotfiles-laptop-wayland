@@ -22,6 +22,10 @@ require('telescope').setup {
         file_sorter      = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix    = ' 🔍 ',
         color_devicons   = true,
+        history = {
+          path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
+          limit = 100,
+        },
 
         sorting_strategy = "ascending",
 
@@ -55,6 +59,7 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('project')
+require('telescope').load_extension('smart_history')
 
 
 -- Implement delta as previewer for diffs

@@ -16,3 +16,6 @@ fi
 if [ -f $HOME/.ssh/bsh ]; then
     ssh-add $HOME/.ssh/bsh > /dev/null 2>&1
 fi
+if [ -f $HOME/.ssh/scandio ]; then
+    ssh-add $HOME/.ssh/bsh > /dev/null 2>&1
+fi
